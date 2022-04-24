@@ -1,23 +1,23 @@
 
 class Conversor():
 
-    def __init__(self, tipo_de_magnitud, uns_entrada, uns_salida):
-        self.tipo_de_magnitud = tipo_de_magnitud
+    def __init__(self, magnitud, uns_entrada, uns_salida):
+        self.magnitud = magnitud
         self.uns_entrada = uns_entrada #Unidades de entrada
         self.uns_salida = uns_salida #Unidades de salida
-        self.unidades = {} #Diccionario que almacena el conjunto de unidades
+        self._unidades = {
+            'bar_a_psi':14.5,
+            'in_a_mm':1/25.4,
+            'gal_a_L':3.78,
+            'L_a_m3':0.001
+        }
 
-    def bar_a_psi():
-        pass
+    def convertir(self):
+        conversion_solicitada = f'{self.uns_entrada}_a_{self.uns_salida}'
+        factor = _unidades.get(conversion_solicitada)
 
-    def in_a_mm():
-        pass
+        return self.magnitud * factor
 
-    def gal_a_L():
-        pass
 
-    def L_a_mm():
-        pass
-
-    def agregar_unidad(nueva_un_entrada, nueva_un_salida): #permite al usuario agregar una nueva conversión de unidades
+    def agregar_unidad(self, nueva_un_entrada, nueva_un_salida, factor): #permite al usuario agregar una nueva conversión de unidades
         pass
